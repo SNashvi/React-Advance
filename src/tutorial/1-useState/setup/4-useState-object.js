@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 
 const UseStateObject = () => {
-  const [people, setPeople] = useState({
-    name: "Peter",
-    age: 24,
-    message: "Random Message",
-  });
+  const [name] = useState("Peter");
+  const [age] = useState(24);
+  const [message, setMessage] = useState("Random Message");
 
   const changeMessage = () => {
-    setPeople({ ...people, message: "Message Changed" });
+    setMessage("Message Changed");
   };
   return (
     <>
-      <h2>{people.name}</h2>
-      <h3>{people.age}</h3>
-      <h4>{people.message}</h4>
+      <h2>{name}</h2>
+      <h3>{age}</h3>
+      <h4>{message}</h4>
       <button onClick={changeMessage} className="btn">
         Change Message
       </button>
